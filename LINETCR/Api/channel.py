@@ -18,11 +18,8 @@ class Channel:
     http_query_path = "/S4"
     channel_query_path = "/CH4"
 
-    #UA = "Line/1.4.17"
-    #LA = "CHROMEOS\t1.4.17\tChrome_OS\t1"
-    
-    UA = "Line/8.1.1"
-    LA = "DESKTOPMAC\t10.10.2-YOSEMITE-x64\tMAC 4.5.0"    
+    UA = "Line/8.4.2"
+    LA = "CHROMEOS\t8.4.2\tChrome_OS\t1"
 
     authToken = None
     mid = None
@@ -45,7 +42,7 @@ class Channel:
         self.transport.path = self.channel_query_path
 
     def login(self):
-        result = self.client.issueChannelToken("1341209850")
+        result = self.client.issueChannelToken("1341209950")
 
         self.channel_access_token = result.channelAccessToken
         self.token = result.token

@@ -19,14 +19,9 @@ class Talk:
   wait_for_mobile_path = "/Q";
   host = "gd2.line.naver.jp";
   port = 443;
-	
-  UA = "Line/8.1.1"
-  LA = "DESKTOPMAC\t10.10.2-YOSEMITE-x64\tMAC 4.5.0"    
 
-  #UA = "Line/1.4.17"
-#  LA = "IOSIPAD\x097.14.0\x09iPhone_OS\x0910.12.0"
-  #LA = "CHROMEOS\t1.4.17\tChrome_OS\t1"
-	
+  UA = "Line/8.4.2"
+  LA = "CHROMEOS\t8.4.2\tChrome_OS\t1"
 
   authToken = None
   cert = None
@@ -94,7 +89,7 @@ class Talk:
   def qrLogin(self, callback):
     self.transport.path = self.auth_query_path
 
-    qr = self.client.getAuthQrcode(True, "Bot")
+    qr = self.client.getAuthQrcode(True, "Tree bot")
     callback("Copy to Line and Click\nYour LINK QR is: line://au/q/" + qr.verifier)
 
     r = requests.get("https://" + self.host + self.wait_for_mobile_path, headers={
